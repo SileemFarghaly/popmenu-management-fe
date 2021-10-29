@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Commands
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`npm start`
+`npm test`
 
-## Available Scripts
+# Requirements:
 
-In the project directory, you can run:
+We're looking more for behavior here than style. For example, typography and coloring will not be judged, but positioning and readability will.
+There is no expectation that data will be stored outside of the web app state.
 
-### `npm start`
+## Level 1: Basics
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Present a Menu as a series of Menu Item Cards, having: Image (any random image)
+Title
+Description
+Price
+This should be responsive and readable on desktop or mobile browser
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Level 2: Add and remove Items
 
-### `npm test`
+Present an interface that enables users to create a new Menu Item with:
+URL to image Title Description Price
+Present a control that enables users to remove a menu item Present confirmation dialog before committing delete
+Include unit tests
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Level 3: Inline editing
 
-### `npm run build`
+Present an interface that enables users to edit, inline, with immediate updates: URL to image
+Title Description Price
+Include unit tests
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Level 4: Multiple Menu Management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is a bonus! We'd love to talk about your solution if you think it's a fun problem
+Build an interface that enables users to have multiple menus
