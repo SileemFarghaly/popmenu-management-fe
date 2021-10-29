@@ -9,53 +9,23 @@ const Menu = () => {
     setMenuItems([
       {
         title: "Spaghettios",
-        description: "It's a can of Spaghettios",
+        description:
+          "It's a can of Spaghettios, served straight from the can. Perfect for young children or sad men.",
         price: "$3.99",
+        image: "./spaghettios.jpg",
       },
       {
-        title: "Spaghettios2",
-        description: "The Sequel",
+        title: "Sinner's Sandwich",
+        description:
+          "Fresh sliced Deli Turkey, Strawberry Jam, and Fruit Loops, served on White or Wheat.",
         price: "$3.99",
+        image: "./sinnersandwich.jpg",
       },
       {
-        title: "Spaghettios",
-        description: "It's a can of Spaghettios",
+        title: "A Single Plum, Floating in Perfume",
+        description: "Served in a Mans Hat",
         price: "$3.99",
-      },
-      {
-        title: "Spaghettios2",
-        description: "The Sequel",
-        price: "$3.99",
-      },
-      {
-        title: "Spaghettios",
-        description: "It's a can of Spaghettios",
-        price: "$3.99",
-      },
-      {
-        title: "Spaghettios2",
-        description: "The Sequel",
-        price: "$3.99",
-      },
-      {
-        title: "Spaghettios",
-        description: "It's a can of Spaghettios",
-        price: "$3.99",
-      },
-      {
-        title: "Spaghettios2",
-        description: "The Sequel",
-        price: "$3.99",
-      },
-      {
-        title: "Spaghettios",
-        description: "It's a can of Spaghettios",
-        price: "$3.99",
-      },
-      {
-        title: "Spaghettios2",
-        description: "The Sequel",
-        price: "$3.99",
+        image: "./singleplum.jpg",
       },
     ]);
   }, []);
@@ -70,6 +40,7 @@ const Menu = () => {
               title={e.title}
               description={e.description}
               price={e.price}
+              image={e.image}
             />
           </Grid>
         ))}
