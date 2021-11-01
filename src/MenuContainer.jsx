@@ -46,6 +46,7 @@ const MenuContainer = () => {
       title: `Menu ${menus.length + 1}`,
     };
     setMenus([...menus, newMenu]);
+    setActiveMenu(newMenu.id);
   }
 
   function deleteMenuItem(id) {
