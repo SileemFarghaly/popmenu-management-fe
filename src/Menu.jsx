@@ -28,17 +28,40 @@ const Menu = (props) => {
             </Button>
           </Box>
         </Box>
-        <Grid container columns={{ xs: 4, sm: 8, md: 12 }} spacing={3}>
-          {props.menuItems.map((e, i) => (
-            <Grid item key={e.id}>
-              <MenuItemCard
-                menuItem={e}
-                onDelete={() => props.deleteMenuItem(e.id)}
-                onEdit={props.editMenuItem}
-              />
-            </Grid>
-          ))}
-        </Grid>
+        {props.menuItems.length === 0 ? (
+          <Grid item>
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              style={{
+                width: "95%",
+                height: "125px",
+                border: "2px dashed #000",
+                margin: "0 10px 10px 30px",
+              }}
+            >
+              <span style={{ textAlign: "center" }}>
+                <Typography variant="body1">No Menu Items</Typography>
+                <Typography variant="subtitle1">
+                  Add one using the 'New Menu Item' Button Above!
+                </Typography>
+              </span>
+            </Box>
+          </Grid>
+        ) : (
+          <Grid container columns={{ xs: 4, sm: 8, md: 12 }} spacing={3}>
+            {props.menuItems.map((e, i) => (
+              <Grid item key={e.id}>
+                <MenuItemCard
+                  menuItem={e}
+                  onDelete={() => props.deleteMenuItem(e.id)}
+                  onEdit={props.editMenuItem}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        )}
       </Paper>
       <NewMenuItem
         open={openAddMenuItemDialog}
