@@ -1,7 +1,7 @@
-import Menu from "./Menu";
+import MenuContainer from "./MenuContainer";
 
 function App() {
-  return <Menu />;
+  return <MenuContainer />;
 }
 
 export default App;

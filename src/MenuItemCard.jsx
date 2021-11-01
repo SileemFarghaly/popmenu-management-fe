@@ -23,7 +23,7 @@ const MenuItemCard = (props) => {
   return (
     <>
       <Card sx={{ width: "275px", minHeight: "390px" }}>
-        <CardHeader title={menuItem.title} />
+        <CardHeader title={menuItem.title} component="h3" />
         <CardMedia alt="" component="img" height="194" image={menuItem.image} />
         <CardContent>
           <Typography variant="body2">{menuItem.description}</Typography>
@@ -45,12 +45,14 @@ const MenuItemCard = (props) => {
               </IconButton>
             </Box>
             <Box style={{ marginTop: "12px" }}>
-              <span>
-                {Number.parseFloat(menuItem.price).toLocaleString("en-US", {
-                  style: "currency",
-                  currency: "USD",
-                })}
-              </span>
+              {menuItem.price && (
+                <span>
+                  {Number.parseFloat(menuItem.price).toLocaleString("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  })}
+                </span>
+              )}
             </Box>
           </Box>
         </CardActions>
@@ -67,6 +69,7 @@ const MenuItemCard = (props) => {
         menuItem={menuItem}
         onComplete={(m) => {
           setMenuItem(m);
+          props.onEdit(m);
         }}
       />
     </>

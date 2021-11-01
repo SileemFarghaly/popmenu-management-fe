@@ -16,13 +16,6 @@ const EditMenuItem = (props) => {
   const [menuItemDesc, setMenuItemDesc] = useState(props.menuItem.description);
   const [menuItemPrice, setMenuItemPrice] = useState(props.menuItem.price);
 
-  function resetState() {
-    setMenuItemTitle("");
-    setMenuItemImage("");
-    setMenuItemDesc("");
-    setMenuItemPrice("");
-  }
-
   return (
     <Dialog open={props.open} onClose={props.onClose}>
       <DialogTitle>Edit Menu Item</DialogTitle>
@@ -74,7 +67,6 @@ const EditMenuItem = (props) => {
           <Button
             color="secondary"
             onClick={() => {
-              resetState();
               props.onClose();
             }}
           >
@@ -89,8 +81,8 @@ const EditMenuItem = (props) => {
                 description: menuItemDesc,
                 price: menuItemPrice,
                 image: menuItemImage,
+                parentMenuId: props.menuItem.parentMenuId,
               });
-              resetState();
               props.onClose();
             }}
           >

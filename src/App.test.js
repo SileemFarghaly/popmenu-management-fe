@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
-import NewMenuItem from "./NewMenuItem";
-import EditMenuItem from "./EditMenuItem";
 import DeleteMenuItem from "./DeleteMenuItem";
+import EditMenuItem from "./EditMenuItem";
+import NewMenuItem from "./NewMenuItem";
 
 test("renders the menu", () => {
   render(<App />);
