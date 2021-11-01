@@ -6,7 +6,7 @@ import NewMenuItem from "./NewMenuItem";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
-  const [openAddMenuItemDialog, setOpenMenuItemDialog] = useState(false);
+  const [openAddMenuItemDialog, setOpenAddMenuItemDialog] = useState(false);
 
   useEffect(() => {
     setMenuItems([
@@ -48,7 +48,7 @@ const Menu = () => {
               variant="contained"
               style={{ marginTop: "10px" }}
               onClick={() => {
-                setOpenMenuItemDialog(true);
+                setOpenAddMenuItemDialog(true);
               }}
             >
               <AddIcon />
@@ -71,7 +71,7 @@ const Menu = () => {
       </Paper>
       <NewMenuItem
         open={openAddMenuItemDialog}
-        onClose={() => setOpenMenuItemDialog(false)}
+        onClose={() => setOpenAddMenuItemDialog(false)}
         onComplete={(m) => {
           setMenuItems([...menuItems, { id: menuItems.length + 1, ...m }]);
         }}

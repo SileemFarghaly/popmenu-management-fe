@@ -12,17 +12,21 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import React, { useState } from "react";
 import DeleteMenuItem from "./DeleteMenuItem";
+import EditMenuItem from "./EditMenuItem";
 
 const MenuItemCard = (props) => {
   const [openDeleteMenuItemDialog, setOpenDeletetemDialog] = useState(false);
+  const [openEditMenuItemDialog, setOpenEditMenuItemDialog] = useState(false);
+
+  const [menuItem, setMenuItem] = useState(props.menuItem);
 
   return (
     <>
       <Card sx={{ width: "275px", minHeight: "390px" }}>
-        <CardHeader title={props.menuItem.title} />
-        <CardMedia component="img" height="194" image={props.menuItem.image} />
+        <CardHeader title={menuItem.title} />
+        <CardMedia component="img" height="194" image={menuItem.image} />
         <CardContent>
-          <Typography variant="body2">{props.menuItem.description}</Typography>
+          <Typography variant="body2">{menuItem.description}</Typography>
         </CardContent>
         <CardActions>
           <Box display="flex" style={{ width: "100%" }}>
@@ -30,22 +34,17 @@ const MenuItemCard = (props) => {
               <IconButton onClick={() => setOpenDeletetemDialog(true)}>
                 <DeleteIcon />
               </IconButton>
-              <IconButton>
+              <IconButton onClick={() => setOpenEditMenuItemDialog(true)}>
                 <EditIcon />
               </IconButton>
             </Box>
             <Box style={{ marginTop: "12px" }}>
-              {!isNaN(props.menuItem.Price) && (
-                <span>
-                  {Number.parseFloat(props.menuItem.price).toLocaleString(
-                    "en-US",
-                    {
-                      style: "currency",
-                      currency: "USD",
-                    }
-                  )}
-                </span>
-              )}
+              <span>
+                {Number.parseFloat(menuItem.price).toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                })}
+              </span>
             </Box>
           </Box>
         </CardActions>
@@ -54,7 +53,15 @@ const MenuItemCard = (props) => {
         open={openDeleteMenuItemDialog}
         onClose={() => setOpenDeletetemDialog(false)}
         onDelete={props.onDelete}
-        menuItem={props.menuItem}
+        menuItem={menuItem}
+      />
+      <EditMenuItem
+        open={openEditMenuItemDialog}
+        onClose={() => setOpenEditMenuItemDialog(false)}
+        menuItem={menuItem}
+        onComplete={(m) => {
+          setMenuItem(m);
+        }}
       />
     </>
   );
