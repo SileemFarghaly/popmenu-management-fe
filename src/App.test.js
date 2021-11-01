@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 import NewMenuItem from "./NewMenuItem";
+import EditMenuItem from "./EditMenuItem";
+import DeleteMenuItem from "./DeleteMenuItem";
 
 test("renders the menu", () => {
   render(<App />);
@@ -12,4 +14,16 @@ test("Opens the create dialog with focus", () => {
   render(<NewMenuItem open={true} />);
   const linkElement = screen.getByTestId("test-menu-title-input");
   expect(linkElement).toHaveFocus();
+});
+
+test("Opens the edit dialog with focus", () => {
+  render(<EditMenuItem open={true} menuItem={{}} />);
+  const linkElement = screen.getByTestId("test-edit-menu-title-input");
+  expect(linkElement).toHaveFocus();
+});
+
+test("Render the Delete Dialog", () => {
+  render(<DeleteMenuItem open={true} menuItem={{}} />);
+  const linkElement = screen.getByText(/Are you sure you want to delete/i);
+  expect(linkElement).toBeInTheDocument();
 });

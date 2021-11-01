@@ -1,4 +1,4 @@
-import { Button, Dialog, DialogContent, DialogActions } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent } from "@mui/material";
 
 const DeleteMenuItem = (props) => {
   return (

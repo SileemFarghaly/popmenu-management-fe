@@ -1,15 +1,15 @@
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import {
+  Box,
   Card,
   CardActions,
   CardContent,
   CardHeader,
   CardMedia,
-  Typography,
-  Box,
   IconButton,
+  Typography,
 } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import React, { useState } from "react";
 import DeleteMenuItem from "./DeleteMenuItem";
 import EditMenuItem from "./EditMenuItem";
@@ -24,17 +24,23 @@ const MenuItemCard = (props) => {
     <>
       <Card sx={{ width: "275px", minHeight: "390px" }}>
         <CardHeader title={menuItem.title} />
-        <CardMedia component="img" height="194" image={menuItem.image} />
+        <CardMedia alt="" component="img" height="194" image={menuItem.image} />
         <CardContent>
           <Typography variant="body2">{menuItem.description}</Typography>
         </CardContent>
         <CardActions>
           <Box display="flex" style={{ width: "100%" }}>
             <Box flexGrow={1}>
-              <IconButton onClick={() => setOpenDeletetemDialog(true)}>
+              <IconButton
+                onClick={() => setOpenDeletetemDialog(true)}
+                aria-label={`Delete ${menuItem.title}`}
+              >
                 <DeleteIcon />
               </IconButton>
-              <IconButton onClick={() => setOpenEditMenuItemDialog(true)}>
+              <IconButton
+                onClick={() => setOpenEditMenuItemDialog(true)}
+                aria-label={`Edit ${menuItem.title}`}
+              >
                 <EditIcon />
               </IconButton>
             </Box>

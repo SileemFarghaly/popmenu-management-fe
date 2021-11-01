@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Dialog,
   DialogActions,
@@ -6,7 +7,6 @@ import {
   DialogTitle,
   InputAdornment,
   TextField,
-  Box,
 } from "@mui/material";
 import React, { useState } from "react";
 
@@ -25,7 +25,7 @@ const EditMenuItem = (props) => {
 
   return (
     <Dialog open={props.open} onClose={props.onClose}>
-      <DialogTitle>New Menu Item</DialogTitle>
+      <DialogTitle>Edit Menu Item</DialogTitle>
       <DialogContent>
         <TextField
           autoFocus
@@ -36,7 +36,7 @@ const EditMenuItem = (props) => {
           value={menuItemTitle}
           onChange={(e) => setMenuItemTitle(e.target.value)}
           inputProps={{
-            "data-testid": "test-menu-title-input",
+            "data-testid": "test-edit-menu-title-input",
           }}
         />
         <TextField
