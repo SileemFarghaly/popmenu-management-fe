@@ -81,6 +81,7 @@ const NewMenuItem = (props) => {
             Cancel
           </Button>
           <Button
+            id="add-menu-item"
             variant="contained"
             onClick={() => {
               props.onComplete({

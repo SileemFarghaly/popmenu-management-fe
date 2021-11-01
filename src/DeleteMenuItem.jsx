@@ -9,6 +9,7 @@ const DeleteMenuItem = (props) => {
       <DialogActions>
         <Button onClick={props.onClose}>No</Button>
         <Button
+          id={`confirm-delete-${props.menuItem.id}`}
           onClick={() => {
             props.onDelete();
             props.onClose();

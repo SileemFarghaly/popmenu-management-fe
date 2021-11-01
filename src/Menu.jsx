@@ -16,6 +16,7 @@ const Menu = (props) => {
           </Box>
           <Box>
             <Button
+              id="new-menu-item"
               variant="contained"
               style={{ marginTop: "10px" }}
               onClick={() => {

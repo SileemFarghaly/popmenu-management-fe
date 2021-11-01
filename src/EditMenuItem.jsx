@@ -73,6 +73,7 @@ const EditMenuItem = (props) => {
             Cancel
           </Button>
           <Button
+            id={`edit-save-${props.menuItem.id}`}
             variant="contained"
             onClick={() => {
               props.onComplete({
