@@ -32,7 +32,9 @@ test("Add a menu", () => {
   render(<App />);
   const newMenuButton = screen.getByText("New Menu");
   newMenuButton.click();
-  const menubutton = screen.getByText(/Menu 3/i);
+
+  // Make sure we grab the button and not the header text
+  const menubutton = screen.getByRole("button", { name: /Menu 3/i });
 
   expect(menubutton).toBeInTheDocument();
 });
